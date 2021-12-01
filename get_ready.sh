@@ -2,7 +2,7 @@
 
 cd $(dirname $0)
 
-day=$(date +"%d")
+day=$(date +"%-d")
 year=$(date +"%Y")
 day_dir="day$(printf '%02d' $day)"
 
