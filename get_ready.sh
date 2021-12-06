@@ -15,7 +15,7 @@ fi
 
 url="https://adventofcode.com/${year}/day/${day}"
 
-firefox --new-window ${url}
+firefox --new-window ${url} &
 wget -q --load-cookies=cookies.txt -P ${day_dir} "${url}/input"
 cp base.py "${day_dir}/${day_dir}.py"
 code
