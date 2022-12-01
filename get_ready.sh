@@ -16,10 +16,11 @@ then
     exit 1
 fi
 
+email=$(git config --global user.email)
 url="https://adventofcode.com/${year}/day/${day}"
 
 # firefox --new-window ${url} & 
 wslview ${url} 
-wget -q --load-cookies=cookies.txt -P "${year}/${day_dir}" "${url}/input"
+curl -A "${email}" --cookie cookies.txt "${url}/input" -o "${year}/${day_dir}/input" --create-dirs
 cp base.py "${year}/${day_dir}/${day_dir}.py"
 # code
